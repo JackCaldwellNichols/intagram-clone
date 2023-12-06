@@ -26,6 +26,7 @@ const useLogin = () => {
             if(userCred){
                 const docRef = doc(db, 'users', userCred.user.uid)
                 const docSnap = await getDoc(docRef)
+              
                 localStorage.setItem('user', JSON.stringify(docSnap.data()))
                 loginUser(docSnap.data())
             }

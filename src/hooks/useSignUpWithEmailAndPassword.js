@@ -43,6 +43,7 @@ const signup = async (inputs) => {
                 uid: newUser.user.uid,
                 email: inputs.email,
                 username: inputs.username,
+                fullName: inputs.fullName,
                 bio: "",
                 profilePicURL: "",
                 followers: [],
