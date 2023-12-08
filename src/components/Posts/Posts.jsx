@@ -22,12 +22,12 @@ const Posts = () => {
             <Flex gap={2}>
               <SkeletonCircle size={10} />
               <VStack gap={2} alignItems={'flex-start'}>
-                <Skeleton height={'10px'} w={'200px'}/>
-                <Skeleton height={'10px'} w={'200px'}/>
+                <Skeleton height='10px' width='200px'/>
+                <Skeleton height='10px' width='200px'/>
               </VStack>
             </Flex>
             <Skeleton w={'full'}>
-              <Box h={'500px'}></Box>
+              <Box h={'500px'}>Contents wrapped</Box>
             </Skeleton>
           </VStack>
         })
