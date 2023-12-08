@@ -30,18 +30,18 @@ const GoogleAuth = ({prefix}) => {
         localStorage.setItem('user', JSON.stringify(userDoc))
       }else{
         const userDocument = {
-          uid: newUser.user.uid,
-          email: newUser.user.email,
-          username: newUser.user.email.split('@')[0],
-          fullName: newUser.user.displayName,
+          uid: newUser?.user.uid,
+          email: newUser?.user.email,
+          username: newUser?.user.email.split('@')[0],
+          fullName: newUser?.user.displayName,
           bio: "",
-          profilePicURL: newUser.user.photoURL,
+          profilePicURL: newUser?.user.photoURL,
           followers: [],
           following: [],
           posts: [],
           createdAt: Date.now()
       }
-      await setDoc(doc(db, 'users', newUser.user.uid), userDocument);
+      await setDoc(doc(db, 'users', newUser?.user.uid), userDocument);
       localStorage.setItem('user', JSON.stringify(userDocument))
       loginUser(userDocument)
       }

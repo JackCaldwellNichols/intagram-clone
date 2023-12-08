@@ -30,7 +30,7 @@ const Create = () => {
     try {
       await handleCreatePost(selectedFile, caption);
       onClose()
-      selectedFile(null)
+      setSelectedFile(null)
       setCaption('')
     } catch (error) {
       showToast('Error', error.message, 'error')
