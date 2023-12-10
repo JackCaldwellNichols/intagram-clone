@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { auth } from '../../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Navbar from '../../components/Navbar/Navbar'
+import BottomBar from '../../components/BottomBar/BottomBar'
 
 
 const PageLayout = ({children}) => {
@@ -11,6 +12,7 @@ const PageLayout = ({children}) => {
   const [user, loading] = useAuthState(auth);
   
   const canRenderSideBar =  pathname !== '/auth' && user;
+  const canRenderBottomBar =  pathname !== '/auth' && user;
   const canRenderNavbar = !user && !loading && pathname !== 'auth' 
   const checkingIfUserIsAuthenticated = !user && loading
   if(checkingIfUserIsAuthenticated) return <PageLayoutSpinner />
@@ -18,8 +20,13 @@ const PageLayout = ({children}) => {
   return (
     <Flex flexDir={canRenderNavbar ? 'column' : 'row'}>
         {canRenderSideBar ? (
-      <Box w={{base: '70px', md: '240px'}}>
+      <Box display={{base: 'none', md: 'block'}}>
         <Sidebar />    
+      </Box>
+        ) : null}
+        {canRenderBottomBar ? (
+      <Box h={{base: '70px', md: null}} display={{base: 'flex', md: 'none'}}>
+        <BottomBar />    
       </Box>
         ) : null}
       {canRenderNavbar ? (

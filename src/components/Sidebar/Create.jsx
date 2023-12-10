@@ -40,13 +40,13 @@ const Create = () => {
   return (
     <>
   <Tooltip hasArrow label={'Create'} placement="right"  ml={1} openDelay={500} display={{base: 'block', md: 'none'}}>
-      <Flex onClick={onOpen} display={'flex'}  alignItems={'center'} gap={4} _hover={{bg:'whiteAlpha.400'}} borderRadius={6} p={2} w={{base: 10, md: 'full'}} justifyContent={{base: 'center', md: 'flex-start'}}>
-        <MdOutlineAddBox />
+      <Flex  cursor={'pointer'}  onClick={onOpen} display={'flex'}  alignItems={'center'} gap={4} _hover={{bg:'whiteAlpha.400'}} borderRadius={6} p={2} w={{base: 10, md: 'full'}} justifyContent={{base: 'center', md: 'flex-start'}}>
+        <MdOutlineAddBox size={20}/>
         <Box display={{base: 'none', md: 'block'}}>Create</Box>
       </Flex>
   </Tooltip>
 
-    <Modal isOpen={isOpen} onClose={onClose} size='xl'>
+    <Modal isOpen={isOpen} onClose={onClose} size={{base: 'lg', md: 'xl'}}>
 			<ModalOverlay />
 
       <ModalContent bg={"black"} border={"1px solid gray"}>
