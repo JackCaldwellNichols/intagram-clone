@@ -9,7 +9,7 @@ const Comment = ({comment}) => {
 
 
   return (
-    <Flex gap={4}>
+    <Flex gap={4} mt={2}>
         <Link to={`/${userProfile?.username}`}>
             <Avatar  src={userProfile?.profilePicURL} size={'sm'}/>
         </Link>

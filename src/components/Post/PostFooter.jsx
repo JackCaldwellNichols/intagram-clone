@@ -54,9 +54,9 @@ const handleSubmitComment = async () => {
             <InputGroup>
                 <Input ref={commentRef} variant={'flushed'} placeholder="Add comment..." fontSize={14} onChange={(e) => setComment(e.target.value)} value={comment}/>
                 <InputRightElement>
-                    <Button isLoading={loading} onClick={handleSubmitComment} fontSize={14} color={'blue.500'} fontWeight={600} cursor={'pointer'} _hover={{color: 'white'}} bg={'transparent'}>
+                    {comment.length > 0 && <Button isLoading={loading} onClick={handleSubmitComment} fontSize={14} color={'blue.500'} fontWeight={600} cursor={'pointer'} _hover={{color: 'white'}} bg={'transparent'}>
                         Post
-                    </Button>
+                    </Button>}
                 </InputRightElement>
             </InputGroup>
         </Flex>
