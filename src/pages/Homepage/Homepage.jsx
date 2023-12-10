@@ -11,7 +11,7 @@ const Homepage = () => {
           <Posts />
         </Box>
         <Box flex={2} marginRight={20} display={{base: 'none', lg: 'block'}} maxW={'300px'}>
-      <SuggestedUsers /> 
+          <SuggestedUsers /> 
         </Box>
       </Flex>
     </Container>
